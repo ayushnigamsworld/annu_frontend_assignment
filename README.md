@@ -38,3 +38,17 @@ Think though, about how you would persist your hierarchy, particularly given the
  
 
 Please return a solution that aligns with what you think are appropriate choices for production-quality software. Be prepared to discuss your solution, as well as appropriate production considerations.
+
+## Backend
+
+A simple Express server in `server/index.ts` provides REST endpoints backed by an in-memory hierarchy:
+
+- `POST /hierarchies` creates a new hierarchy and returns its id.
+- `POST /hierarchies/:hid/nodes` adds a node under the provided parent.
+- `GET /hierarchies/:hid/nodes/:id/stores` lists stores under a node.
+
+Run the server with:
+
+```bash
+npm run server
+```
